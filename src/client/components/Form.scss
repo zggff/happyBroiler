@@ -1,0 +1,115 @@
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  width: 100%;
+  // padding: 0 0 10px 0;
+  input[type="text"],
+  select,
+  input[type="number"],
+  textarea {
+    background-color: white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+  }
+  option[hidden] {
+    background-color: red;
+    display: none;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  input[type="submit"] {
+    background-color: var(--bg-primary);
+    color: white;
+    padding: 12px;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover,
+  input[type="submit"]:focus {
+    background-color: var(--bg-secondary);
+  }
+  .row1 {
+    width: 100%;
+  }
+  form {
+    padding: 0 0 10px 0;
+  }
+
+  .row {
+    margin: 12px 12px;
+  }
+  .notError {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .error {
+    border: 1px solid red;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  span {
+    font-size: 0.8rem;
+    color: red;
+  }
+  .modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content {
+    background-color: var(--bg-c-primary);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 1300px;
+    width: 80%;
+  }
+
+  .close {
+    color: var(--bg-primary);
+    opacity: 0.5;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  form {
+    width: 100%;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: var(--bg-secondary);
+    opacity: 1;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .header {
+    background-color: #edf3f3;
+    width: 100%;
+    h3 {
+      padding: 20px;
+    }
+  }
+  .header:hover {
+    background-color: #d2dddd;
+  }
+}
