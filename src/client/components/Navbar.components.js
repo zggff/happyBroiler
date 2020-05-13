@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import useStyles from "isomorphic-style-loader/useStyles";
 import s from "../App.scss";
 
 export const Navbar = () => {
   useStyles(s);
+  let [navActive, setNavActive] = useState(false);
+  const changeNav = () => {
+    setNavActive(!navActive);
+  };
   return (
     <nav className="nav">
-      <input type="checkbox" id="check" />
-      <label htmlFor="check" className="checkbtn">
+      <input type="checkbox" id="check" checked={navActive} readOnly />
+      <label onClick={changeNav} className="checkbtn">
         <svg
           aria-hidden="true"
           focusable="false"
@@ -28,21 +32,29 @@ export const Navbar = () => {
       <label className="logo">Happy Broiler</label>
       <ul>
         <li>
-          <NavLink exact to="/">
+          <NavLink exact to="/" onClick={changeNav}>
             главная
           </NavLink>
         </li>
         <li>
-          <NavLink to="/contact">контакты</NavLink>
+          <NavLink to="/contact" onClick={changeNav}>
+            контакты
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/goods">экопродукты</NavLink>
+          <NavLink to="/goods" onClick={changeNav}>
+            экопродукты
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/standarts">стандарты</NavLink>
+          <NavLink to="/standarts" onClick={changeNav}>
+            стандарты
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/comments">отзывы</NavLink>
+          <NavLink to="/comments" onClick={changeNav}>
+            отзывы
+          </NavLink>
         </li>
       </ul>
     </nav>
