@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import logo from "../../images/happy-broiler-logo2.svg";
+import logo from "../../images/happy-broiler-logo.svg";
 
 export const HomePage = () => {
   return (

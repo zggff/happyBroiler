@@ -24,7 +24,7 @@ var clientConfig = {
 
         loader: "url-loader",
         options: {
-          limit: 10000,
+          limit: 20000,
           name: "/images/[hash:8].[ext]",
         },
       },
@@ -62,7 +62,7 @@ var serverConfig = {
         test: [/\.bmp$/, /\.gif$/, /\.svg$/, /\.jpe?g$/, /\.png$/],
         loader: "url-loader",
         options: {
-          limit: 10000,
+          limit: 20000,
           name: "/images/[hash:8].[ext]",
         },
       },
