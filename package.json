@@ -6,7 +6,7 @@
   "scripts": {
     "dev:webpack": "webpack -w --mode production",
     "dev:server": "nodemon --watch public --exec node NODE_ENV=development public/server.js",
-    "dev": "npm-run-all --parallel dev:*",
+    "dev": "cross-env NODE_ENV=development npm-run-all --parallel dev:*",
     "build": "webpack --mode production",
     "start": "cross-env NODE_ENV=production node public/server.js"
   },

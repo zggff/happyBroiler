@@ -13,6 +13,7 @@ function OrdersForm() {
     phone: "",
     goods: "",
     quantity: "",
+    additional: "",
   });
   const [errors, setErrors] = useState({
     name: "",
@@ -20,6 +21,7 @@ function OrdersForm() {
     phone: "",
     goods: "",
     quantity: "",
+    additional: "",
   });
   const changeHandler = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value });
@@ -44,6 +46,7 @@ function OrdersForm() {
         phone: "",
         goods: "",
         quantity: "",
+        additional: "",
       });
       setErrors({
         name: "",
@@ -51,6 +54,7 @@ function OrdersForm() {
         phone: "",
         goods: "",
         quantity: "",
+        additional: "",
       });
     } catch (error) {}
   };
@@ -110,7 +114,7 @@ function OrdersForm() {
               placeholder="edwa"
             >
               <option style={{ display: "none" }} value="" hidden>
-                выберите товар
+                товар..
               </option>
               <option value="бройлер_цыпленок">цыпленок бройлер</option>
               {/* <option value="бройлер_индюк">индюшка бройлер</option> */}
@@ -126,12 +130,24 @@ function OrdersForm() {
               id="quantity"
               name="quantity"
               type="number"
-              placeholder="введите кол-во товара"
+              placeholder="кол-во товара.."
               value={form.quantity}
               onChange={changeHandler}
               className={errors.quantity === "" ? "notError" : "error"}
             />
             <span>{errors.quantity}</span>
+          </div>
+          <div className="row">
+            <textarea
+              id="additional"
+              name="additional"
+              placeholder="дополнительная информация.."
+              style={{ height: "100px" }}
+              value={form.additional}
+              onChange={changeHandler}
+              className={errors.additional === "" ? "notError" : "error"}
+            ></textarea>
+            <span>{errors.subject}</span>
           </div>
           <div className="row">
             <input type="submit" value="подтвердить" />

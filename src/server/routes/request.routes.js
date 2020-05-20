@@ -87,10 +87,11 @@ RequestRouter.post(
             name: find(errors.array(), "name"),
             goods: find(errors.array(), "goods"),
             quantity: find(errors.array(), "quantity"),
+            additional: "",
           },
         });
       }
-      const { name, email, phone, goods, quantity } = req.body;
+      const { name, email, phone, goods, quantity, additional } = req.body;
       const date = new Date();
       const order = new Order({
         email,
@@ -99,6 +100,7 @@ RequestRouter.post(
         goods,
         date,
         quantity,
+        additional,
       });
       await order.save();
       if (process.env.NODE_ENV === "production") {
@@ -113,7 +115,14 @@ RequestRouter.post(
           from: "happybroiler1@gmail.com",
           to: ["giga@omegam.dol.ru", "gigamaximwachau@gmail.com"],
           subject: "новый заказ",
-          html: `<h1>${name} сделал заказ</h1><ul><li>email: ${email}</li><li>телефон: ${phone}</li><li>товар: ${goods} в количестве: ${quantity} штук</li><li>дата: ${date.toLocaleDateString()}</li></ul>`,
+          html: `<h1>${name} сделал заказ</h1>
+          <ul>
+          <li>email: ${email}</li>
+          <li>телефон: ${phone}</li>
+          <li>товар: ${goods} в количестве: ${quantity} штук</li>
+          <li>дата: ${date.toLocaleDateString()}</li>
+          <li>дополнительная информация: ${additional}</li>
+          </ul>`,
         };
         const mailResult = await transporter.sendMail(mailOptions);
         console.log(mailResult);

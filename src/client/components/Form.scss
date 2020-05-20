@@ -12,6 +12,7 @@
     -moz-appearance: none;
     appearance: none;
     width: 100%;
+    max-width: 100%;
     padding: 12px;
     border-radius: 5px;
   }
@@ -111,5 +112,11 @@
   }
   .header:hover {
     background-color: #d2dddd;
+  }
+}
+@media (max-width: 900px) {
+  .container {
+    span {
+    }
   }
 }

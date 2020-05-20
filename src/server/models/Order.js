@@ -6,6 +6,7 @@ const schema = new Schema({
   phone: { type: String, required: true },
   goods: { type: String, required: true },
   quantity: { type: Number, required: true },
+  additional: { type: String, required: false },
   date: { type: Date, required: true },
 });
 
